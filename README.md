@@ -188,7 +188,7 @@ Linked_list_in_C/
 
 ## Future Improvements
 
-* [X] Implement Doubly Linked List
+* [ ] Implement Doubly Linked List
 * [ ] Add linked-list reversal
 * [ ] Add sorting
 * [ ] Improve input validation
