@@ -201,7 +201,7 @@ The objective of this project is to develop a practical understanding of **linke
 
 ## Author
 
-**Aditya**
+**Aditya Singh**
 B.Tech CSE (AI/ML)
 
 ---
