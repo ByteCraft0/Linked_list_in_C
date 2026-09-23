@@ -4,10 +4,12 @@
 struct Node
 {
     int data;
+    struct Node *prev;
     struct Node *next;
 };
+/*-------------------Funcition Prototype----------------------------------------*/
 
-/* Single Linked List */
+/*Singley Linked List*/
 void singlelinklist(struct Node **head);
 void insertion_sl(struct Node **head);
 void deletion_sl(struct Node **head);
@@ -40,6 +42,24 @@ struct Node *delwithdata_cl(struct Node *head, int data);
 
 void linklisttraversal_cl(struct Node *head);
 
+/*  Doubley Linked List*/
+void doubleylinklist(struct Node **head);
+void insertion_dl(struct Node **head);
+void deletion_dl(struct Node **head);
+
+struct Node *insertatbeg_dl(struct Node *head, int data);
+struct Node *insertatend_dl(struct Node *head, int data);
+struct Node *insertatindex_dl(struct Node *head, int data, int index);
+struct Node *insertafternode_dl(struct Node *head, struct Node *prev, int data);
+
+struct Node *delatbeg_dl(struct Node *head);
+struct Node *delatend_dl(struct Node *head);
+struct Node *delatindex_dl(struct Node *head, int index);
+struct Node *delwithdata_dl(struct Node *head, int data);
+
+
+void linklisttraversal_dl(struct Node *head);
+/*------------------Menu of Singley Linked List----------------------------------------*/
 void singlelinklist(struct Node **head)
 {
     int c, cont;
@@ -68,7 +88,7 @@ void singlelinklist(struct Node **head)
 
     } while (cont == 1);
 }
-
+/*-----------------------Menu of Insertion(Singley Linked List)-------------------------------*/
 void insertion_sl(struct Node **head)
 {
     int c;
@@ -164,7 +184,7 @@ void insertion_sl(struct Node **head)
         printf("INVALID INPUT\n");
     }
 }
-
+// -------------------Insertion at Begining----------------
 struct Node *insertatfirst_sl(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
@@ -177,7 +197,7 @@ struct Node *insertatfirst_sl(struct Node *head, int data)
     ptr->data = data;
     return ptr;
 }
-
+//--------------------Insertion at End----------------------------
 struct Node *insertatend_sl(struct Node *head, int data)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
@@ -200,7 +220,7 @@ struct Node *insertatend_sl(struct Node *head, int data)
     p->next = ptr;
     return head;
 }
-
+//------------------------Insertion at Index---------------------------------
 struct Node *insertatindex_sl(struct Node *head, int data, int index)
 {
     if (index < 0)
@@ -235,7 +255,7 @@ struct Node *insertatindex_sl(struct Node *head, int data, int index)
     p->next = ptr;
     return head;
 }
-
+//--------------------------Insertion After Node--------------------------------
 struct Node *insertafternode_sl(struct Node *head, struct Node *prev, int data)
 {
     if (prev == NULL)
@@ -257,7 +277,7 @@ struct Node *insertafternode_sl(struct Node *head, struct Node *prev, int data)
 
     return head;
 }
-
+/*-----------------------Menu of Deletion(Singley Linked List)-------------------------------*/
 void deletion_sl(struct Node **head)
 {
     int c;
@@ -325,7 +345,7 @@ void deletion_sl(struct Node **head)
         printf("INVALID INPUT\n");
     }
 }
-
+//-------------------Deletion At Begining------------------------------------
 struct Node *delbeg_sl(struct Node *head)
 {
     struct Node *ptr = head;
@@ -338,7 +358,7 @@ struct Node *delbeg_sl(struct Node *head)
     free(ptr);
     return head;
 }
-
+//---------------------Deletion At Index----------------------------------------
 struct Node *delinbtw_sl(struct Node *head, int index)
 {
     if (head == NULL)
@@ -372,7 +392,7 @@ struct Node *delinbtw_sl(struct Node *head, int index)
     free(q);
     return head;
 }
-
+//--------------------Deletion At End-------------------------------
 struct Node *delatend_sl(struct Node *head)
 {
     if (head == NULL)
@@ -396,7 +416,7 @@ struct Node *delatend_sl(struct Node *head)
     free(q);
     return head;
 }
-
+//---------------------------Deletion With Data---------------------------------- 
 struct Node *delwithdata_sl(struct Node *head, int data)
 {
     if (head == NULL)
@@ -425,7 +445,7 @@ struct Node *delwithdata_sl(struct Node *head, int data)
     free(q);
     return head;
 }
-
+//-------------------Traversal(Singley Linked List)-------------------------------------
 void linklisttraversal_sl(struct Node *ptr)
 {
     if (ptr == NULL)
@@ -440,6 +460,7 @@ void linklisttraversal_sl(struct Node *ptr)
     }
 }
 
+/*-----------------------Menu of Circular Linked List-------------------------------*/
 void circularlinklist(struct Node **head)
 {
     int c, cont;
@@ -468,7 +489,7 @@ void circularlinklist(struct Node **head)
 
     } while (cont == 1);
 }
-
+/*-----------------------Menu of Insertion(circular Linked List)-------------------------------*/
 void insertion_cl(struct Node **head)
 {
     int c;
@@ -537,7 +558,7 @@ void insertion_cl(struct Node **head)
         printf("INVALID INPUT\n");
     }
 }
-
+//----------------Insertion At End-----------------------------------------------
 struct Node *insertatend_cl(struct Node *head, int data)
 {
     struct Node *p = (struct Node *)malloc(sizeof(struct Node));
@@ -561,7 +582,7 @@ struct Node *insertatend_cl(struct Node *head, int data)
     p->next = head;
     return head;
 }
-
+//---------------------------Insertion At Begining----------------------------------------
 struct Node *insertatbeg_cl(struct Node *head, int data)
 {
     struct Node *p = (struct Node *)malloc(sizeof(struct Node));
@@ -586,7 +607,7 @@ struct Node *insertatbeg_cl(struct Node *head, int data)
     head = p;
     return head;
 }
-
+//---------------------------Insertion At Index-----------------------------------------
 struct Node *insertatindex_cl(struct Node *head, int data, int index)
 {
     if (index < 0)
@@ -623,7 +644,7 @@ struct Node *insertatindex_cl(struct Node *head, int data, int index)
     ptr->next = p;
     return head;
 }
-
+/*-----------------------Menu of Deletion(Circular Linked List)-------------------------------*/
 void deletion_cl(struct Node **head)
 {
     int c;
@@ -705,7 +726,7 @@ void deletion_cl(struct Node **head)
         printf("INVALID INPUT\n");
     }
 }
-
+//-------------------------Deletion At Begining--------------------------------------------
 struct Node *delatbeg_cl(struct Node *head)
 {
     if (head == NULL)
@@ -728,7 +749,7 @@ struct Node *delatbeg_cl(struct Node *head)
     free(head);
     return newhead;
 }
-
+//-------------------------Deletion At End--------------------------------------------------
 struct Node *delatend_cl(struct Node *head)
 {
     if (head == NULL)
@@ -752,7 +773,7 @@ struct Node *delatend_cl(struct Node *head)
     free(q);
     return head;
 }
-
+//-------------------------Deletion At Index----------------------------------------
 struct Node *delatindex_cl(struct Node *head, int index)
 {
     if (head == NULL)
@@ -792,7 +813,7 @@ struct Node *delatindex_cl(struct Node *head, int index)
 
     return head;
 }
-
+//-----------------------Deletion With Data--------------------------------------------------
 struct Node *delwithdata_cl(struct Node *head, int data)
 {
     if (head == NULL)
@@ -820,7 +841,7 @@ struct Node *delwithdata_cl(struct Node *head, int data)
     free(q);
     return head;
 }
-
+//--------------------------Traversal(Circular Linked List)--------------------------------------
 void linklisttraversal_cl(struct Node *head)
 {
     struct Node *ptr = head;
@@ -835,12 +856,513 @@ void linklisttraversal_cl(struct Node *head)
         ptr = ptr->next;
     } while (ptr != head);
 }
+/*-----------------------Menu of Doubley Linked List-------------------------------*/
+void doubleylinklist(struct Node **head)
+{
+    int c, cont;
 
+    do
+    {
+        printf("enter:1.for insertion,2.for deletion,3.for traversal: ");
+        scanf("%d", &c);
+        switch (c)
+        {
+        case 1:
+            insertion_dl(head);
+            break;
+        case 2:
+            deletion_dl(head);
+            break;
+        case 3:
+            linklisttraversal_dl(*head);
+            break;
+        default:
+            printf("INVALID INPUT\n");
+        }
+
+        printf("\nDo you want to continue? 1.Yes  2.No (exit): ");
+        scanf("%d", &cont);
+
+    } while (cont == 1);
+}
+/*-----------------------Menu of Insertion(Doubley Linked List)-------------------------------*/
+void insertion_dl(struct Node **head)
+{
+    int c;
+
+    printf("Enter: 1.at beginning, 2.at end, 3.at index, 4.after node: ");
+    scanf("%d", &c);
+
+    switch (c)
+    {
+        case 1:
+        {
+            int n, i = 0, data;
+
+            printf("How many nodes do you want to insert: ");
+            scanf("%d", &n);
+
+            while (i < n)
+            {
+                printf("Enter data: ");
+                scanf("%d", &data);
+
+                *head = insertatbeg_dl(*head, data);
+
+                i++;
+            }
+            break;
+        }
+
+        case 2:
+        {
+            int n, i = 0, data;
+
+            printf("How many nodes do you want to insert: ");
+            scanf("%d", &n);
+
+            while (i < n)
+            {
+                printf("Enter data: ");
+                scanf("%d", &data);
+
+                *head = insertatend_dl(*head, data);
+
+                i++;
+            }
+            break;
+        }
+
+        case 3:
+        {
+            int n, i = 0, data, index;
+
+            printf("Enter starting index: ");
+            scanf("%d", &index);
+
+            printf("How many nodes do you want to insert: ");
+            scanf("%d", &n);
+
+            while (i < n)
+            {
+                printf("Enter data: ");
+                scanf("%d", &data);
+
+                *head = insertatindex_dl(*head, data, index);
+
+                index++;
+                i++;
+            }
+            break;
+        }
+
+        case 4:
+        {
+            int data, afterdata;
+
+            printf("Enter data of node after which to insert: ");
+            scanf("%d", &afterdata);
+
+            printf("Enter data: ");
+            scanf("%d", &data);
+
+            struct Node *prev = *head;
+
+            while (prev != NULL && prev->data != afterdata)
+            {
+                prev = prev->next;
+            }
+
+            if (prev == NULL)
+            {
+                printf("Node not found\n");
+            }
+            else
+            {
+                *head = insertafternode_dl(*head, prev, data);
+            }
+
+            break;
+        }
+
+        default:
+            printf("INVALID INPUT\n");
+    }
+}
+//-------------------------Insertion At Begining------------------------------------------------
+struct Node *insertatbeg_dl(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+
+    if (ptr == NULL)
+    {
+        printf("Memory allocation unsuccessful\n");
+        return head;
+    }
+
+    ptr->data = data;
+    ptr->prev = NULL;
+    ptr->next = head;
+
+    if (head != NULL)
+    {
+        head->prev = ptr;
+    }
+
+    head = ptr;
+
+    return head;
+}
+//------------------------Insertion At End-----------------------------------------------------
+struct Node *insertatend_dl(struct Node *head, int data)
+{
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+
+    if (ptr == NULL)
+    {
+        printf("Memory allocation unsuccessful\n");
+        return head;
+    }
+
+    ptr->data = data;
+    ptr->next = NULL;
+
+    if (head == NULL)
+    {
+        ptr->prev = NULL;
+        return ptr;
+    }
+
+    struct Node *p = head;
+
+    while (p->next != NULL)
+    {
+        p = p->next;
+    }
+
+    p->next = ptr;
+    ptr->prev = p;
+
+    return head;
+}
+//-----------------------Insertion At Index--------------------------------------------------
+struct Node *insertatindex_dl(struct Node *head, int data, int index)
+{
+    if (index < 0)
+    {
+        printf("Invalid index\n");
+        return head;
+    }
+
+    if (index == 0)
+    {
+        return insertatbeg_dl(head, data);
+    }
+
+    struct Node *p = head;
+    int i = 0;
+
+    while (p != NULL && i < index - 1)
+    {
+        p = p->next;
+        i++;
+    }
+
+    if (p == NULL)
+    {
+        printf("Invalid index\n");
+        return head;
+    }
+
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+
+    if (ptr == NULL)
+    {
+        printf("Memory allocation unsuccessful\n");
+        return head;
+    }
+
+    ptr->data = data;
+
+    ptr->next = p->next;
+    ptr->prev = p;
+
+    if (p->next != NULL)
+    {
+        p->next->prev = ptr;
+    }
+
+    p->next = ptr;
+
+    return head;
+}
+//---------------------------Insertion Afetr Node---------------------------------------------
+struct Node *insertafternode_dl(struct Node *head,struct Node *prev,int data)
+{
+    if (prev == NULL)
+    {
+        printf("Previous node is NULL\n");
+        return head;
+    }
+
+    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+
+    if (ptr == NULL)
+    {
+        printf("Memory allocation unsuccessful\n");
+        return head;
+    }
+
+    ptr->data = data;
+
+    ptr->next = prev->next;
+    ptr->prev = prev;
+
+    if (prev->next != NULL)
+    {
+        prev->next->prev = ptr;
+    }
+
+    prev->next = ptr;
+
+    return head;
+}
+/*-----------------------Menu of Deletion(Doubley Linked List)-------------------------------*/
+void deletion_dl(struct Node **head)
+{
+    int c;
+
+    printf("Enter: 1.at beginning, 2.at end, 3.at index, 4.with data: ");
+    scanf("%d", &c);
+
+    switch (c)
+    {
+        case 1:
+        {
+            int n, i = 0;
+
+            printf("How many nodes do you want to delete: ");
+            scanf("%d", &n);
+
+            while (i < n && *head != NULL)
+            {
+                *head = delatbeg_dl(*head);
+                i++;
+            }
+
+            break;
+        }
+
+        case 2:
+        {
+            int n, i = 0;
+
+            printf("How many nodes do you want to delete: ");
+            scanf("%d", &n);
+
+            while (i < n && *head != NULL)
+            {
+                *head = delatend_dl(*head);
+                i++;
+            }
+
+            break;
+        }
+
+        case 3:
+        {
+            int n, i = 0;
+            int index;
+
+            printf("Enter starting index: ");
+            scanf("%d", &index);
+
+            printf("How many nodes do you want to delete: ");
+            scanf("%d", &n);
+
+            while (i < n && *head != NULL)
+            {
+                *head = delatindex_dl(*head, index);
+                i++;
+            }
+
+            break;
+        }
+
+        case 4:
+        {
+            int data;
+
+            printf("Enter data: ");
+            scanf("%d", &data);
+
+            *head = delwithdata_dl(*head, data);
+
+            break;
+        }
+
+        default:
+            printf("INVALID INPUT\n");
+    }
+}
+//-----------------------------Deletion At Begining-------------------------------------------
+struct Node *delatbeg_dl(struct Node *head)
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return NULL;
+    }
+
+    struct Node *ptr = head;
+
+    head = head->next;
+
+    if (head != NULL)
+    {
+        head->prev = NULL;
+    }
+
+    free(ptr);
+
+    return head;
+}
+//------------------------Deletion At End-----------------------------------------------------
+struct Node *delatend_dl(struct Node *head)
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return NULL;
+    }
+
+    if (head->next == NULL)
+    {
+        free(head);
+        return NULL;
+    }
+
+    struct Node *p = head;
+
+    while (p->next != NULL)
+    {
+        p = p->next;
+    }
+
+    p->prev->next = NULL;
+
+    free(p);
+
+    return head;
+}
+//--------------------------Deletion At Index-------------------------------------------------
+struct Node *delatindex_dl(struct Node *head, int index)
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return NULL;
+    }
+
+    if (index < 0)
+    {
+        printf("Invalid index\n");
+        return head;
+    }
+
+    if (index == 0)
+    {
+        return delatbeg_dl(head);
+    }
+
+    struct Node *p = head;
+    int i = 0;
+
+    while (p != NULL && i < index)
+    {
+        p = p->next;
+        i++;
+    }
+
+    if (p == NULL)
+    {
+        printf("Invalid index\n");
+        return head;
+    }
+
+    if (p->next != NULL)
+    {
+        p->next->prev = p->prev;
+    }
+
+    p->prev->next = p->next;
+
+    free(p);
+
+    return head;
+}
+//-------------------------------Deletion With Data-------------------------------------------
+struct Node *delwithdata_dl(struct Node *head, int data)
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return NULL;
+    }
+
+    struct Node *p = head;
+
+    while (p != NULL && p->data != data)
+    {
+        p = p->next;
+    }
+
+    if (p == NULL)
+    {
+        printf("Data not found\n");
+        return head;
+    }
+
+    if (p == head)
+    {
+        return delatbeg_dl(head);
+    }
+
+    if (p->next != NULL)
+    {
+        p->next->prev = p->prev;
+    }
+
+    p->prev->next = p->next;
+
+    free(p);
+
+    return head;
+}
+//------------------------Traversal(Doubley Linked List)-------------------------------------
+void linklisttraversal_dl(struct Node *head)
+{
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+
+    struct Node *ptr = head;
+
+    while (ptr != NULL)
+    {
+        printf("Element: %d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
+
+/*-----------------------------MAIN FUNCITION-----------------------------------------------*/
 int main()
 {
     struct Node *head_sl = NULL;
     struct Node *head_cl = NULL;
-
+    struct Node *head_dl = NULL;
     int ch, ci;
 
     printf("PROGRAMME FOR LINKED LIST\n");
@@ -864,7 +1386,7 @@ int main()
             break;
 
         case 3:
-            printf("Double linked list is not implemented yet.\n");
+           doubleylinklist(&head_dl);
             break;
 
         default:
