@@ -1,14 +1,10 @@
 # Linked List Programs in C
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#linked-list-programs-in-c)
-
 A menu-driven C program implementing **Singly Linked Lists**, **Circular Linked Lists**, and **Doubly Linked Lists** with common insertion, deletion, traversal, and searching operations.
 
 ## Program Flow
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#program-flow)
-
-```
+```text
                          START
                            │
                            ▼
@@ -40,17 +36,11 @@ A menu-driven C program implementing **Singly Linked Lists**, **Circular Linked 
 
 ```
 
-**svg**
-
 ## Singly Linked List
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#singly-linked-list)
 
 The program supports the following operations:
 
 ### Insertion
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#insertion)
 
 * Insert at beginning
 * Insert at end
@@ -59,8 +49,6 @@ The program supports the following operations:
 
 ### Deletion
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#deletion)
-
 * Delete from beginning
 * Delete from end
 * Delete from a specific index
@@ -68,11 +56,9 @@ The program supports the following operations:
 
 ### Traversal
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#traversal)
-
 Displays all elements starting from the head node.
 
-```
+```text
 HEAD
  │
  ▼
@@ -80,25 +66,17 @@ HEAD
 
 ```
 
-**svg**
-
 ## Circular Linked List
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#circular-linked-list)
 
 The program supports:
 
 ### Insertion
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#insertion-1)
 
 * Insert at beginning
 * Insert at end
 * Insert at a specific index
 
 ### Deletion
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#deletion-1)
 
 * Delete from beginning
 * Delete from end
@@ -107,11 +85,9 @@ The program supports:
 
 ### Traversal
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#traversal-1)
-
 Traverses the list until it reaches the starting node again.
 
-```
+```text
        ┌──────────────────────────┐
        │                          │
        ▼                          │
@@ -119,17 +95,11 @@ Traverses the list until it reaches the starting node again.
 
 ```
 
-**svg**
-
 ## Doubly Linked List
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#doubly-linked-list)
 
 The program supports:
 
 ### Insertion
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#insertion-2)
 
 * Insert at beginning
 * Insert at end
@@ -138,8 +108,6 @@ The program supports:
 
 ### Deletion
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#deletion-2)
-
 * Delete from beginning
 * Delete from end
 * Delete from a specific index
@@ -147,25 +115,19 @@ The program supports:
 
 ### Traversal
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#traversal-2)
-
 Traverses the list from the head node using the `next` pointer.
 
-```
+```text
 NULL ← [10 | • | •] ⇄ [20 | • | •] ⇄ [30 | • | NULL]
         HEAD
 
 ```
 
-**svg**
-
 ## Node Structure
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#node-structure)
 
 Each linked-list node is represented using:
 
-```
+```c
 struct Node
 {
     int data;
@@ -174,8 +136,6 @@ struct Node
 };
 ```
 
-**svg**
-
 Where:
 
 * `data` stores the value
@@ -183,8 +143,6 @@ Where:
 * `next` stores the address of the next node
 
 ## Concepts Used
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#concepts-used)
 
 * Structures
 * Pointers
@@ -199,8 +157,6 @@ Where:
 * Doubly linked-list pointer manipulation
 
 ## Complexity
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#complexity)
 
 | **Operation**       | **Singly Linked List** | **Circular Linked List** | **Doubly Linked List** |
 | ------------------- | ---------------------- | ------------------------ | ---------------------- |
@@ -217,54 +173,36 @@ Where:
 
 ## How to Run
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#how-to-run)
-
 ### Clone
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#clone)
-
-```
+```bash
 git clone https://github.com/ByteCraft0/Linked_list_in_C.git
 cd Linked_list_in_C
 ```
 
-**svg**
-
 ### Compile
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#compile)
-
-```
+```bash
 gcc linked_list/ll_main.c -o linkedlist
 ```
 
-**svg**
-
 ### Run
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#run)
 
 **Windows:**
 
-```
+```bash
 .\linkedlist.exe
 ```
 
-**svg**
-
 **Linux / macOS:**
 
-```
+```bash
 ./linkedlist
 ```
 
-**svg**
-
 ## Project Structure
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#project-structure)
-
-```
+```text
 Linked_list_in_C/
 │
 ├── linked_list/
@@ -274,11 +212,7 @@ Linked_list_in_C/
 
 ```
 
-**svg**
-
 ## Current Status
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#current-status)
 
 | **Component**        | **Status**    |
 | -------------------- | ------------- |
@@ -288,8 +222,6 @@ Linked_list_in_C/
 
 ## Future Improvements
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#future-improvements)
-
 * Add linked-list reversal
 * Add sorting
 * Improve input validation
@@ -298,13 +230,9 @@ Linked_list_in_C/
 
 ## Objective
 
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#objective)
-
 The objective of this project is to develop a practical understanding of **linked lists, pointers, structures, and dynamic memory allocation in C** by implementing core operations from scratch.
 
 ## Author
-
-[svg](https://github.com/ByteCraft0/Linked_list_in_C#author)
 
 **Aditya Singh** B.Tech CSE (AI/ML)
 
